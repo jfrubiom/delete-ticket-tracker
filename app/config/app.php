@@ -65,7 +65,7 @@ return array(
 	|
 	*/
 
-	'key' => 'YourSecretKey!!!',
+	'key' => 'gUWrEGi1mexjRjmW5SuIVsrV5lWMXaOD',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -115,6 +115,8 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
 		'Cartalyst\Sentry\SentryServiceProvider',
+        'Way\Generators\GeneratorsServiceProvider',
+        'Kalani\FacadeRoot\FacadeRootServiceProvider',
 
 	),
 

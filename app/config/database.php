@@ -54,10 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => '127.0.0.1',
-			'database'  => 'laravel4_testing',
-			'username'  => 'root',
-			'password'  => '',
+			'host'      => 'localhost',
+			'database'  => 'kata_issues',
+			'username'  => 'kata_user',
+			'password'  => 'kata_pw',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
