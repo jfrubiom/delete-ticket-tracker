@@ -8,6 +8,7 @@
 	},
 	"require-dev": {
 	    "kalani/facade-root": "dev-master",    
+	    "kalani/validation-rule-generator": "dev-master",    
 	    "way/generators": "dev-master"
     },
 	"autoload": {

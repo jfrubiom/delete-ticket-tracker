@@ -117,6 +117,7 @@ return array(
 		'Cartalyst\Sentry\SentryServiceProvider',
         'Way\Generators\GeneratorsServiceProvider',
         'Kalani\FacadeRoot\FacadeRootServiceProvider',
+        'Kalani\ValidationRuleGenerator\ValidationRuleGeneratorServiceProvider',
 
 	),
 

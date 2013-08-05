@@ -22,6 +22,16 @@ class User extends SentryUserModel {
 		return "{$this->first_name} {$this->last_name}";
 	}
 
+	public function getNameAttribute()
+	{
+		return $this->fullName();
+	}
+
+	public function getNameAndAddressAttribute()
+	{
+		return "{$this->first_name}  &lt;{$this->email}&gt;";
+	}
+
 	/**
 	 * Returns the user Gravatar image url.
 	 *
@@ -36,4 +46,22 @@ class User extends SentryUserModel {
 		return "//gravatar.org/avatar/{$gravatar}";
 	}
 
+
+    public function search($searchTerms = array())
+    {
+        if (empty($searchTerms)) {
+            return $this->take($this->perPage);
+        }
+
+        $search = $this->where('first_name', 'like', $searchTerms['term'].'%')
+        	->orWhere('last_name', 'like', $searchTerms['term'].'%')
+        	->orWhere('email', 'like', $searchTerms['term'].'%');
+
+        return $search->take($this->perPage);
+    }
+
+	public function tickets()
+	{
+		$this->hasMany('Ticket');
+	}
 }

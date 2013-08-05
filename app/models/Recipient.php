@@ -1,11 +1,12 @@
 <?php
 
-class Recipient extends Eloquent {
+class Recipient extends Eloquent 
+{
 	protected $guarded = array();
 
 	public static $rules = array(
-		'ticket_id' => 'required',
-		'recipient_id' => 'required',
-		'recipient_type' => 'required'
+        'ticket_id' => 'integer|min:0|required',
+        'recipient_id' => 'integer|min:0|required',
+        'recipient_type' => 'max:1|required',
 	);
 }

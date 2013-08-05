@@ -14,8 +14,8 @@ class CreateResponsesTable extends Migration {
 	{
 		Schema::create('responses', function(Blueprint $table) {
 			$table->increments('id');
-			$table->integer('ticket_id');
-			$table->integer('responder_id');
+			$table->integer('ticket_id')->unsigned();
+			$table->integer('responder_id')->unsigned();
 			$table->text('description');
 			$table->timestamps();
 		});

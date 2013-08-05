@@ -16,11 +16,11 @@ class CreateTicketsTable extends Migration {
 			$table->increments('id');
 			$table->string('summary');
 			$table->text('description');
-			$table->integer('assignee_id');
-			$table->integer('creator_id');
-			$table->integer('category_id');
-			$table->string('priority');
-			$table->datetime('due');
+			$table->integer('assignee_id')->unsigned()->nullable();
+			$table->integer('creator_id')->unsigned()->nullable();
+			$table->integer('category_id')->unsigned()->nullable();
+			$table->string('priority',1)->default('3');
+			$table->datetime('due')->nullable();
 			$table->timestamps();
 		});
 	}
