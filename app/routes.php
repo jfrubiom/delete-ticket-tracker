@@ -137,3 +137,6 @@ Route::resource('tickets', 'TicketsController');
 Route::resource('responses', 'ResponsesController');
 Route::resource('recipients', 'RecipientsController');
 Route::resource('categories', 'CategoriesController');
+
+
+Route::resource('departments', 'DepartmentsController');
