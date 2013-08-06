@@ -20,6 +20,7 @@
 		<!-- CSS
 		================================================== -->
 		<link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+		<link href="{{ asset('assets/css/project.css') }}" rel="stylesheet">
 
 		<style>
 		@section('styles')
@@ -51,11 +52,7 @@
 			</footer>
 		</div>
 
-		<!-- Javascripts
-		================================================== -->
-		<script src="{{ asset('assets/js/jquery.1.10.2.min.js') }}"></script>
-		<script src="{{ asset('assets/js/bootstrap/bootstrap.min.js') }}"></script>
-		<script src="{{ asset('packages/jquery-ui/jquery-ui-built.js') }}"></script>
+		@include('frontend/partials/scripts')
 
 		@yield('js')
 	</body>

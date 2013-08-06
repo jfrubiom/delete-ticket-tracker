@@ -21,13 +21,18 @@
         </li>
 
         <li>
-            {{ Form::label('creator_id', 'Creator_id:') }}
+            {{ Form::label('creator_id', 'Creator:') }}
             {{ Form::input('number', 'creator_id') }}
         </li>
 
         <li>
-            {{ Form::label('category_id', 'Category_id:') }}
-            {{ Form::input('number', 'category_id') }}
+            {{ Form::label('department_id', 'Department:') }}
+            {{ Form::select('department_id', array(), Null, array('id'=>'department_id')) }}
+        </li>
+
+        <li>
+            {{ Form::label('category_id', 'Category:') }}
+            {{ Form::select('category_id', array(), Null, array('id'=>'category_id')) }}
         </li>
 
         <li>
@@ -54,3 +59,20 @@
 @endif
 
 @stop
+
+
+
+@section('js')
+    <script type="text/javascript">
+        loadAjaxForSelectBox('/ajax/priorities', '#priority');
+        loadAjaxForSelectBox('/ajax/categories', '#category_id');
+        loadAjaxForSelectBox('/ajax/departments', '#department_id');
+        setupAutocompleteWithId('/ajax/users', '#assignee');
+
+        $('#due').datepicker({
+            dateFormat: "m/d/yy",
+            minDate: new Date(),
+        });
+    </script>
+@stop
+

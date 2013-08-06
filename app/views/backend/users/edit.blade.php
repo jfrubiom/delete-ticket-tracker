@@ -50,6 +50,16 @@ User Update ::
 				</div>
 			</div>
 
+			<!-- Department -->
+			<div class="control-group {{ $errors->has('department_id') ? 'error' : '' }}">
+				<label class="control-label" for="department_id">Department</label>
+				<div class="controls">
+					<select name="department_id" id="department_id">
+					</select>
+					{{ $errors->first('department_id', '<span class="help-inline">:message</span>') }}
+				</div>
+			</div>
+
 			<!-- Email -->
 			<div class="control-group {{ $errors->has('email') ? 'error' : '' }}">
 				<label class="control-label" for="email">Email</label>
@@ -164,3 +174,12 @@ User Update ::
 	</div>
 </form>
 @stop
+
+
+@section('js')
+    <script type="text/javascript">
+        loadAjaxForSelectBox('/ajax/departments', '#department_id');
+    </script>
+@stop
+
+

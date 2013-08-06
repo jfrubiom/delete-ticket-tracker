@@ -11,22 +11,33 @@ class AjaxController extends BaseController
             array('id' => '4', 'label' => '4'),
             array('id' => '5', 'label' => '5 (lowest)'),
         );
-        return json_encode($priorities);
+        return Response::json($priorities);
+    }
+
+    public function getDepartments()
+    {
+        $dept = new Department;
+        $found = $dept->search(Request::all())
+            ->get(array('id','name as label'))->toArray();
+
+        $user = Sentry::getUser();
+        if( ! is_null($user) && !is_null($user->department_id)) {
+            $this->injectTagIntoArrayForId($found, $user->department_id);
+        }
+
+        return Response::json($found);
     }
 
     public function getCategories()
     {
         $category = new Category;
-        return $category->search(Request::all())
-            ->get(array('id','name as label'))->toJson();
-
+        return Response::json($category->search(Request::all())
+            ->get(array('id','name as label')));
     }
 
     public function getUsers()
     {
         $user = new User;
-        // return $user->search(Request::all())
-        //     ->get(array('id', 'nameAndAddress as label'));
 
         $found = $user->search(Request::all())
             ->get(array('id', 'first_name', 'email'));
@@ -35,7 +46,19 @@ class AjaxController extends BaseController
         foreach($found as $item) {
             $results[] = array('id' => $item->id, 'label' => $item->nameAndAddress);
         }
-        return json_encode($results);
+        return Response::json($results);
     }
+
+
+    protected function injectTagIntoArrayForId(&$array, $id, $tag=' selected="selected"')
+    {
+        foreach($array as &$item) {
+            if($item['id']==$id) {
+                $item['extra'] = $tag;
+                return;
+            }
+        }
+    }
+
 }
 
