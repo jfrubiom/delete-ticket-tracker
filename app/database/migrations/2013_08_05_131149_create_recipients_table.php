@@ -16,7 +16,7 @@ class CreateRecipientsTable extends Migration {
 			$table->increments('id');
 			$table->integer('ticket_id')->unsigned();
 			$table->integer('recipient_id')->unsigned();
-			$table->string('recipient_type',1);
+			$table->string('recipient_type',1)->nullable();
 			$table->timestamps();
 		});
 	}

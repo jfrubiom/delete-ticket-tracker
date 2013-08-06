@@ -29,7 +29,7 @@ class User extends SentryUserModel {
 
 	public function getNameAndAddressAttribute()
 	{
-		return "{$this->first_name}  &lt;{$this->email}&gt;";
+		return "{$this->first_name}  <{$this->email}>";
 	}
 
 	/**

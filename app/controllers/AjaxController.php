@@ -1,12 +1,25 @@
 <?php
 
-class AjaxController extends AuthorizedController 
+class AjaxController extends BaseController 
 {
+    public function getPriorities()
+    {
+        $priorities = array(
+            array('id' => '1', 'label' => '1 (highest)'),
+            array('id' => '2', 'label' => '2'),
+            array('id' => '3', 'label' => '3', 'extra' => ' selected="selected"'),
+            array('id' => '4', 'label' => '4'),
+            array('id' => '5', 'label' => '5 (lowest)'),
+        );
+        return json_encode($priorities);
+    }
+
     public function getCategories()
     {
         $category = new Category;
         return $category->search(Request::all())
-            ->get(array('id','name as label'));
+            ->get(array('id','name as label'))->toJson();
+
     }
 
     public function getUsers()
@@ -20,7 +33,7 @@ class AjaxController extends AuthorizedController
 
         $results = array();
         foreach($found as $item) {
-            $results[] = array($item->id, $item->nameAndAddress);
+            $results[] = array('id' => $item->id, 'label' => $item->nameAndAddress);
         }
         return json_encode($results);
     }
