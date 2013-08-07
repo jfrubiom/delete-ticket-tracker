@@ -14,6 +14,7 @@
 				<th>Assigned To</th>
 				<th>Department</th>
 				<th>Priority</th>
+				<th>Created</th>
 				<th>Due</th>
 			</tr>
 		</thead>
@@ -22,10 +23,11 @@
 			@foreach ($tickets as $ticket)
 				<tr>
 					<td>{{{ $ticket->summary }}}</td>
-					<td>{{{ $ticket->assignedTo->first_name }}}
-					<td>{{{ $ticket->category->name }}}</td>
+					<td>{{{ $ticket->assignedTo ?: '<unassigned>' }}}
+					<td>{{{ $ticket->department->name }}}</td>
 					<td>{{{ $ticket->priority }}}</td>
-					<td>{{{ $ticket->due }}}</td>
+					<td>{{{ $ticket->created_at->diffForHumans() }}}</td>
+					<td>{{{ $ticket->due > 0 ? $ticket->due->diffForHumans() : '' }}}</td>
                     <td>{{ link_to_route('tickets.edit', 'Edit', array($ticket->id), array('class' => 'btn btn-info')) }}</td>
 				</tr>
 			@endforeach

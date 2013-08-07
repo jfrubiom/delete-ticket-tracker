@@ -1,7 +1,10 @@
 <?php
 
-class Ticket extends Eloquent 
+class Ticket extends Ardent 
 {
+	public $autoHydrateEntityFromInput = true;
+    public $autoPurgeRedundantAttributes = true;
+
 	protected $guarded = array();
 
 	public static $rules = array(
@@ -9,6 +12,7 @@ class Ticket extends Eloquent
 		'description' => 'required',
 		'assignee_id' => 'integer|min:0',
 		'creator_id' => 'integer|min:0',
+		'department_id' => 'integer|min:0',
 		'category_id' => 'integer|min:0',
 		'priority' => 'max:1',
 	);
@@ -26,6 +30,11 @@ class Ticket extends Eloquent
 	public function category()
 	{
 		return $this->belongsTo('Category', 'category_id');
+	}
+
+	public function department()
+	{
+		return $this->belongsTo('Department', 'department_id');
 	}
 
 }

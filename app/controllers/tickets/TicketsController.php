@@ -1,6 +1,7 @@
 <?php
 
-class TicketsController extends BaseController {
+class TicketsController extends BaseController 
+{
 
 	/**
 	 * Ticket Repository
@@ -48,7 +49,9 @@ class TicketsController extends BaseController {
 
 		if ($validation->passes())
 		{
-			$this->ticket->create($input);
+			$values = array_only($input, array('summary','description','assignee_id','creator_id',
+				'department_id', 'category_id', 'priority', 'due'));
+			$this->ticket->create($values);
 
 			return Redirect::route('tickets.index');
 		}
@@ -104,7 +107,9 @@ class TicketsController extends BaseController {
 		if ($validation->passes())
 		{
 			$ticket = $this->ticket->find($id);
-			$ticket->update($input);
+			$values = array_only($input, array('summary','description','assignee_id','creator_id',
+				'department_id', 'category_id', 'priority', 'due'));
+			$ticket->update($values);
 
 			return Redirect::route('tickets.show', $id);
 		}

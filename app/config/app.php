@@ -65,7 +65,7 @@ return array(
 	|
 	*/
 
-	'key' => 'eBKygNLl4A862InQl8aJVtL8maeCSrky',
+	'key' => 'y6ka9T82zcKQD7cL4G1a8osBz3cYPAFM',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -118,6 +118,7 @@ return array(
         'Way\Generators\GeneratorsServiceProvider',
         'Kalani\FacadeRoot\FacadeRootServiceProvider',
         'Kalani\ValidationRuleGenerator\ValidationRuleGeneratorServiceProvider',
+        'LaravelBook\Ardent\Providers\ArdentServiceProvider',
 
 	),
 
@@ -185,7 +186,7 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
 
 		'Sentry'          => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
-
+		'Ardent'		  => 'LaravelBook\Ardent\Ardent',
 	),
 
 );

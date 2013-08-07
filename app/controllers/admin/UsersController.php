@@ -248,6 +248,7 @@ class UsersController extends AdminController {
 			// Update the user
 			$user->first_name  = Input::get('first_name');
 			$user->last_name   = Input::get('last_name');
+			$user->department_id  = Input::get('department_id');
 			$user->email       = Input::get('email');
 			$user->activated   = Input::get('activated', $user->activated);
 			$user->permissions = Input::get('permissions');

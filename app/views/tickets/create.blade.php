@@ -20,7 +20,7 @@
 
         <li>
             {{ Form::label('description', 'Description:') }}
-            {{ Form::textarea('description') }}
+            {{ Form::textarea('description', Null ) }}
         </li>
 
         <li>
