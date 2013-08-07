@@ -1,6 +1,9 @@
 <?php
 
-class Ticket extends Ardent 
+// use LaravelBook\Ardent\Ardent;
+
+// class Ticket extends LaravelBook\Ardent\Ardent
+class Ticket extends Eloquent
 {
 	public $autoHydrateEntityFromInput = true;
     public $autoPurgeRedundantAttributes = true;
@@ -16,6 +19,19 @@ class Ticket extends Ardent
 		'category_id' => 'integer|min:0',
 		'priority' => 'max:1',
 	);
+
+	public function scopeMine($query)
+	{
+		$user = Sentry::getUser();
+
+		$query->where('assignee_id', $user->id);
+	}
+
+	public function createdByMe($query)
+	{
+		$user = Sentry::getUser();
+		$query->where('creator_id', $user->id);
+	}
 
 	public function assignedTo()
 	{

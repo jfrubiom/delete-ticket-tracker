@@ -119,6 +119,7 @@ return array(
         'Kalani\FacadeRoot\FacadeRootServiceProvider',
         'Kalani\ValidationRuleGenerator\ValidationRuleGeneratorServiceProvider',
         'LaravelBook\Ardent\Providers\ArdentServiceProvider',
+		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 
 	),
 

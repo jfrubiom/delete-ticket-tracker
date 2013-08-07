@@ -11,7 +11,8 @@
 		"mockery/mockery": "dev-master",
 	    "kalani/facade-root": "dev-master",    
 	    "kalani/validation-rule-generator": "dev-master",    
-	    "way/generators": "dev-master"
+	    "way/generators": "dev-master",
+		"barryvdh/laravel-ide-helper": "1.*"
     },
 	"autoload": {
 		"classmap": [
@@ -31,6 +32,7 @@
 			"php artisan clear-compiled"
 		],
 		"post-update-cmd": [
+	        "php artisan ide-helper:generate",
 			"php artisan optimize"
 		],
 		"post-create-project-cmd": [

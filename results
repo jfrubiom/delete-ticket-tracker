@@ -1,0 +1,33 @@
+PHP Fatal error:  Call to a member function fetchMock() on a non-object in /home/joel/projects/web/kata/08-05_tickets/vendor/mockery/mockery/library/Mockery.php on line 95
+PHP Stack trace:
+PHP   1. {main}() /usr/bin/phpunit:0
+PHP   2. PHPUnit_TextUI_Command::main() /usr/bin/phpunit:46
+PHP   3. PHPUnit_TextUI_Command->run() /usr/share/php/PHPUnit/TextUI/Command.php:129
+PHP   4. PHPUnit_TextUI_TestRunner->doRun() /usr/share/php/PHPUnit/TextUI/Command.php:176
+PHP   5. PHPUnit_Framework_TestSuite->run() /usr/share/php/PHPUnit/TextUI/TestRunner.php:346
+PHP   6. PHPUnit_Framework_TestSuite->run() /usr/share/php/PHPUnit/Framework/TestSuite.php:705
+PHP   7. PHPUnit_Framework_TestSuite->runTest() /usr/share/php/PHPUnit/Framework/TestSuite.php:745
+PHP   8. PHPUnit_Framework_TestCase->run() /usr/share/php/PHPUnit/Framework/TestSuite.php:775
+PHP   9. PHPUnit_Framework_TestResult->run() /usr/share/php/PHPUnit/Framework/TestCase.php:769
+PHP  10. PHPUnit_Framework_TestCase->runBare() /usr/share/php/PHPUnit/Framework/TestResult.php:648
+PHP  11. PHPUnit_Framework_TestCase->runTest() /usr/share/php/PHPUnit/Framework/TestCase.php:824
+PHP  12. ReflectionMethod->invokeArgs() /usr/share/php/PHPUnit/Framework/TestCase.php:969
+PHP  13. TicketsTest->testIndex() /home/joel/projects/web/kata/08-05_tickets/app/tests/controllers/TicketsTest.php:0
+PHP  14. Illuminate\Foundation\Testing\TestCase->call() /home/joel/projects/web/kata/08-05_tickets/app/tests/controllers/TicketsTest.php:34
+PHP  15. call_user_func_array() /home/joel/projects/web/kata/08-05_tickets/vendor/laravel/framework/src/Illuminate/Foundation/Testing/TestCase.php:58
+PHP  16. Symfony\Component\BrowserKit\Client->request() /home/joel/projects/web/kata/08-05_tickets/vendor/laravel/framework/src/Illuminate/Foundation/Testing/TestCase.php:0
+PHP  17. Symfony\Component\HttpKernel\Client->doRequest() /home/joel/projects/web/kata/08-05_tickets/vendor/symfony/browser-kit/Symfony/Component/BrowserKit/Client.php:324
+PHP  18. Illuminate\Foundation\Application->handle() /home/joel/projects/web/kata/08-05_tickets/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/Client.php:82
+PHP  19. Illuminate\Foundation\Application->dispatch() /home/joel/projects/web/kata/08-05_tickets/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:551
+PHP  20. Illuminate\Routing\Router->dispatch() /home/joel/projects/web/kata/08-05_tickets/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:530
+PHP  21. Illuminate\Routing\Route->run() /home/joel/projects/web/kata/08-05_tickets/vendor/laravel/framework/src/Illuminate/Routing/Router.php:1016
+PHP  22. Illuminate\Routing\Route->callCallable() /home/joel/projects/web/kata/08-05_tickets/vendor/laravel/framework/src/Illuminate/Routing/Route.php:47
+PHP  23. call_user_func_array() /home/joel/projects/web/kata/08-05_tickets/vendor/laravel/framework/src/Illuminate/Routing/Route.php:80
+PHP  24. Illuminate\Routing\{closure}() /home/joel/projects/web/kata/08-05_tickets/vendor/laravel/framework/src/Illuminate/Routing/Route.php:0
+PHP  25. Illuminate\Routing\Controllers\Controller->callAction() /home/joel/projects/web/kata/08-05_tickets/vendor/laravel/framework/src/Illuminate/Routing/Router.php:985
+PHP  26. Illuminate\Routing\Controllers\Controller->callMethod() /home/joel/projects/web/kata/08-05_tickets/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php:115
+PHP  27. call_user_func_array() /home/joel/projects/web/kata/08-05_tickets/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php:138
+PHP  28. TicketsController->index() /home/joel/projects/web/kata/08-05_tickets/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php:0
+PHP  29. Mockery_841576106::all() /home/joel/projects/web/kata/08-05_tickets/app/controllers/tickets/TicketsController.php:25
+PHP  30. Mockery_841576106::__callStatic() /home/joel/projects/web/kata/08-05_tickets/vendor/mockery/mockery/library/Mockery/Generator.php(129) : eval()'d code:244
+PHP  31. Mockery::fetchMock() /home/joel/projects/web/kata/08-05_tickets/vendor/mockery/mockery/library/Mockery/Generator.php(129) : eval()'d code:1389

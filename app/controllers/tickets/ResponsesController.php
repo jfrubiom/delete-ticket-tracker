@@ -1,6 +1,7 @@
 <?php
 
-class ResponsesController extends BaseController {
+class ResponsesController extends BaseController 
+{
 
 	/**
 	 * Response Repository
@@ -44,7 +45,7 @@ class ResponsesController extends BaseController {
 	public function store()
 	{
 		$input = Input::all();
-		$validation = Validator::make($input, Response::$rules);
+		$validation = Validator::make($input, TicketResponse::$rules);
 
 		if ($validation->passes())
 		{
@@ -99,7 +100,7 @@ class ResponsesController extends BaseController {
 	public function update($id)
 	{
 		$input = array_except(Input::all(), '_method');
-		$validation = Validator::make($input, Response::$rules);
+		$validation = Validator::make($input, TicketResponse::$rules);
 
 		if ($validation->passes())
 		{

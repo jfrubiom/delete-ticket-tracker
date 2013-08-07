@@ -24,7 +24,7 @@
 				<tr>
 					<td>{{{ $ticket->summary }}}</td>
 					<td>{{{ $ticket->assignedTo ?: '<unassigned>' }}}
-					<td>{{{ $ticket->department->name }}}</td>
+					<td>{{{ $ticket->department ? $ticket->department->name : '' }}}</td>
 					<td>{{{ $ticket->priority }}}</td>
 					<td>{{{ $ticket->created_at->diffForHumans() }}}</td>
 					<td>{{{ $ticket->due > 0 ? $ticket->due->diffForHumans() : '' }}}</td>

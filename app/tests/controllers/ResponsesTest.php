@@ -3,11 +3,12 @@
 use Mockery as m;
 use Way\Tests\Factory;
 
-class ResponsesTest extends TestCase {
+class ResponsesTest extends TestCase 
+{
 
 	public function __construct()
 	{
-		$this->mock = m::mock('Eloquent', 'Response');
+		$this->mock = m::mock('Eloquent', 'TicketResponse');
 		$this->collection = m::mock('Illuminate\Database\Eloquent\Collection')->shouldDeferMissing();
 	}
 
@@ -15,8 +16,8 @@ class ResponsesTest extends TestCase {
 	{
 		parent::setUp();
 
-		$this->attributes = Factory::response(['id' => 1]);
-		$this->app->instance('Response', $this->mock);
+		$this->attributes = Factory::response(array('id' => 1));
+		$this->app->instance('TicketResponse', $this->mock);
 	}
 
 	public function tearDown()
@@ -88,7 +89,7 @@ class ResponsesTest extends TestCase {
 	{
 		$this->mock->shouldReceive('find')
 				   ->with(1)
-				   ->andReturn(m::mock(['update' => true]));
+				   ->andReturn(m::mock(array('update' => true)));
 
 		$this->validate(true);
 		$this->call('PATCH', 'responses/1');
@@ -98,7 +99,7 @@ class ResponsesTest extends TestCase {
 
 	public function testUpdateFails()
 	{
-		$this->mock->shouldReceive('find')->with(1)->andReturn(m::mock(['update' => true]));
+		$this->mock->shouldReceive('find')->with(1)->andReturn(m::mock(array('update' => true)));
 		$this->validate(false);
 		$this->call('PATCH', 'responses/1');
 
@@ -109,7 +110,7 @@ class ResponsesTest extends TestCase {
 
 	public function testDestroy()
 	{
-		$this->mock->shouldReceive('find')->with(1)->andReturn(m::mock(['delete' => true]));
+		$this->mock->shouldReceive('find')->with(1)->andReturn(m::mock(array('delete' => true)));
 
 		$this->call('DELETE', 'responses/1');
 	}
@@ -118,6 +119,6 @@ class ResponsesTest extends TestCase {
 	{
 		Validator::shouldReceive('make')
 				->once()
-				->andReturn(m::mock(['passes' => $bool]));
+				->andReturn(m::mock(array('passes' => $bool)));
 	}
 }

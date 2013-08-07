@@ -2,11 +2,15 @@
 
 use Mockery as m;
 use Way\Tests\Factory;
+// use LaravelBook\Ardent\Ardent;
 
-class TicketsTest extends TestCase {
+class TicketsTest extends TestCase 
+{
 
 	public function __construct()
 	{
+		// $this->mock = m::mock('\LaravelBook\Ardent\Ardent', 'Ticket');
+		// $this->collection = m::mock('Illuminate\Database\Eloquent\Collection')->shouldDeferMissing();
 		$this->mock = m::mock('Eloquent', 'Ticket');
 		$this->collection = m::mock('Illuminate\Database\Eloquent\Collection')->shouldDeferMissing();
 	}
@@ -15,7 +19,7 @@ class TicketsTest extends TestCase {
 	{
 		parent::setUp();
 
-		$this->attributes = Factory::ticket(['id' => 1]);
+		$this->attributes = Factory::ticket(array('id' => 1));
 		$this->app->instance('Ticket', $this->mock);
 	}
 
@@ -88,7 +92,7 @@ class TicketsTest extends TestCase {
 	{
 		$this->mock->shouldReceive('find')
 				   ->with(1)
-				   ->andReturn(m::mock(['update' => true]));
+				   ->andReturn(m::mock(array('update' => true)));
 
 		$this->validate(true);
 		$this->call('PATCH', 'tickets/1');
@@ -98,7 +102,7 @@ class TicketsTest extends TestCase {
 
 	public function testUpdateFails()
 	{
-		$this->mock->shouldReceive('find')->with(1)->andReturn(m::mock(['update' => true]));
+		$this->mock->shouldReceive('find')->with(1)->andReturn(m::mock(array('update' => true)));
 		$this->validate(false);
 		$this->call('PATCH', 'tickets/1');
 
@@ -109,7 +113,7 @@ class TicketsTest extends TestCase {
 
 	public function testDestroy()
 	{
-		$this->mock->shouldReceive('find')->with(1)->andReturn(m::mock(['delete' => true]));
+		$this->mock->shouldReceive('find')->with(1)->andReturn(m::mock(array('delete' => true)));
 
 		$this->call('DELETE', 'tickets/1');
 	}
@@ -118,6 +122,6 @@ class TicketsTest extends TestCase {
 	{
 		Validator::shouldReceive('make')
 				->once()
-				->andReturn(m::mock(['passes' => $bool]));
+				->andReturn(m::mock(array('passes' => $bool)));
 	}
 }
