@@ -11,19 +11,6 @@
 
 Route::group(array('prefix' => 'admin'), function()
 {
-
-	# Blog Management
-	// Route::group(array('prefix' => 'blogs'), function()
-	// {
-	// 	Route::get('/', array('as' => 'blogs', 'uses' => 'Controllers\Admin\BlogsController@getIndex'));
-	// 	Route::get('create', array('as' => 'create/blog', 'uses' => 'Controllers\Admin\BlogsController@getCreate'));
-	// 	Route::post('create', 'Controllers\Admin\BlogsController@postCreate');
-	// 	Route::get('{blogId}/edit', array('as' => 'update/blog', 'uses' => 'Controllers\Admin\BlogsController@getEdit'));
-	// 	Route::post('{blogId}/edit', 'Controllers\Admin\BlogsController@postEdit');
-	// 	Route::get('{blogId}/delete', array('as' => 'delete/blog', 'uses' => 'Controllers\Admin\BlogsController@getDelete'));
-	// 	Route::get('{blogId}/restore', array('as' => 'restore/blog', 'uses' => 'Controllers\Admin\BlogsController@getRestore'));
-	// });
-
 	# User Management
 	Route::group(array('prefix' => 'users'), function()
 	{
@@ -130,14 +117,13 @@ Route::group(array('prefix' => 'account'), function()
 |
 */
 
-Route::get('/', array('as' => 'home', 'uses' => 'TicketsController@index'));
+Route::get('/', array('as' => 'home', 'uses' => 'HomeController@index'));
 
+Route::controller('ajax/tickets', 'AjaxTicketsController');
 Route::controller('ajax', 'AjaxController');
 
 Route::resource('tickets', 'TicketsController');
 Route::resource('responses', 'ResponsesController');
 Route::resource('recipients', 'RecipientsController');
 Route::resource('categories', 'CategoriesController');
-
-
 Route::resource('departments', 'DepartmentsController');

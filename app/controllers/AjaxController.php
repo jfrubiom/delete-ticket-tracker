@@ -2,14 +2,13 @@
 
 class AjaxController extends BaseController 
 {
+
     public function getPriorities()
     {
         $priorities = array(
-            array('id' => '1', 'label' => '1 (highest)'),
-            array('id' => '2', 'label' => '2'),
-            array('id' => '3', 'label' => '3', 'extra' => ' selected="selected"'),
-            array('id' => '4', 'label' => '4'),
-            array('id' => '5', 'label' => '5 (lowest)'),
+            array('id' => '1', 'label' => 'High'),
+            array('id' => '3', 'label' => 'Medium', 'extra' => ' selected="selected"'),
+            array('id' => '5', 'label' => 'Low'),
         );
         return Response::json($priorities);
     }

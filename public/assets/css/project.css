@@ -2,3 +2,68 @@
  * project-specific css file
  */
 
+
+#ticket-type-widget {
+    float: left;
+    margin-right: 20px;
+}
+
+#department-widget {
+    float: left;
+    margin-right: 20px;
+}
+
+#category-widget {
+    float: right;
+}
+
+#ticket-count-widget {
+    float: left;
+    margin-right: 20px;
+    padding: 2px 6px;
+    border: 1px solid #ccc;  
+}
+
+#ticket-count-widget ul {
+    list-style: none;
+    margin: 0px;
+}
+
+#ticket-count-widget > ul > li {
+    float: left;
+    margin-left: 16px;
+    margin-right: 4px;
+}
+
+#ticket-count-widget > ul:first-child {
+    margin-left: -12px;
+}
+
+#control-panel-widget {
+    float: right;
+    padding: 2px 6px;
+    border: 1px solid #ccc;  
+}
+
+#ticket-list-widget {
+    background: #cccccc;
+    margin-top: 10px;
+    clear: both;
+}
+
+#ticket-detail-widget {
+    margin-top: 40px;
+    clear: both;
+}
+
+.break {
+    clear: both;
+}
+/*
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}*/

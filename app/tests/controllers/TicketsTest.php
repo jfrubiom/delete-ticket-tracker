@@ -30,7 +30,7 @@ class TicketsTest extends TestCase
 
 	public function testIndex()
 	{
-		$this->mock->shouldReceive('all')->once()->andReturn($this->collection);
+		$this->mock->shouldReceive('open')->once()->andReturn($this->collection);
 		$this->call('GET', 'tickets');
 
 		$this->assertViewHas('tickets');

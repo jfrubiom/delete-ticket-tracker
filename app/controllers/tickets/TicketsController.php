@@ -22,7 +22,7 @@ class TicketsController extends BaseController
 	 */
 	public function index()
 	{
-		$tickets = $this->ticket->all();
+		$tickets = $this->ticket->unassigned()->get();
 
 		return View::make('tickets.index', compact('tickets'));
 	}

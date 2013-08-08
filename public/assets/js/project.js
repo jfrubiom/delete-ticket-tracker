@@ -2,12 +2,18 @@
  * Project-specific javascript
  */
 
-function loadAjaxForSelectBox(url, selectBox) 
+function loadAjaxForSelectBox(url, selectBox, withAll) 
 {
     $.ajax({
         url: url,
     }).done(function(data) {
-        var selectableItems = '';
+
+        if (withAll) {
+            var selectableItems = '<option value=0>All ' + withAll + '</option>';
+        } else {
+            var selectableItems = '';
+        }
+
         data.forEach(function(entry) {
             var extra = '';
             if(typeof entry.extra != 'undefined') {
@@ -36,3 +42,67 @@ function setupAutocompleteWithId(sourceUrl, element)
     });    
 }
 
+function loadTicketCount()
+{
+    sourceData = {
+        dept: $('#department-selector').val(),
+        category: $('#category-selector').val(),
+    }
+
+    $.ajax({
+        url: '/ajax/tickets/counts',
+        data: sourceData,
+    }).done(function(data) {
+        text = '<ul><li>Open: ' + data.open + '</li>' 
+            + '<li>Past Due: ' + data.past + '</li>'
+            + '<li>Unassigned: ' + data.todo + '</li>'
+            + '<li>Mine: ' + data.mine + '</li>';
+        $('#ticket-count-widget').html(text);
+    });
+
+}
+
+function loadTicketList()
+{
+    sourceData = {
+        type: $('#ticket-type-selector').val(),
+        dept: $('#department-selector').val(),
+        category: $('#category-selector').val(),
+    }
+
+    $.ajax({
+        url: '/ajax/tickets/find',
+        data: sourceData,
+    }).done(function(data) {
+        console.log(data);
+
+        text = '<tr>' + $('#ticket-list-widget .head').html() + '</tr>';
+        console.log(text);
+        data.forEach(function(line) {
+            text += '<tr>' 
+                + '<td>' + line.id + '</td>'
+                + '<td>' + line.summary + '</td>'
+                + '<td>' + line.assignee + '</td>'
+                + '<td>' + line.creator + '</td>'
+                + '<td>' + line.priority + '</td>'
+                + '<td>' + line.due + '</td>'
+                + '<td>' + line.updated + '</td>'
+                + '</tr>'
+        });
+        $('#ticket-list-widget').html(text);
+    });
+}
+
+function loadTicketDetails()
+{
+
+}
+
+
+function setupForReloadTablesWhenChanged(target)
+{
+    $(target).change(function() {
+        loadTicketCount();
+        loadTicketList();
+    });
+}
