@@ -1,14 +1,19 @@
 <div class="break"></div>
-<div id="ticket-list-widget">
+
+<div class="row">
+<div id="ticket-list-widget" class="span12">
     <table>
-        <tr class="head">
-            <th width="80">#</th>
-            <th width="600">Summary</th>
-            <th width="80">Assignee</th>
-            <th width="60">Creator</th>
-            <th width="20">Priority</th>
-            <th width="140">Due</th>
-            <th width="240">Updated</th>
-        </tr>
+        <thead><tr>
+            <th>#</th>
+            <th>Summary</th>
+            <th>Assignee</th>
+            <th>Creator</th>
+            <th>Priority</th>
+            <th>Due</th>
+            <th>Updated</th>
+        </tr></thead>
+        <tbody></tbody>
     </table>
 </div>
+</div>
+

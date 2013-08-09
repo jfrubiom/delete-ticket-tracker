@@ -120,7 +120,7 @@ return array(
         'Kalani\ValidationRuleGenerator\ValidationRuleGeneratorServiceProvider',
         'LaravelBook\Ardent\Providers\ArdentServiceProvider',
 		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
-
+	    'Bllim\Datatables\DatatablesServiceProvider',
 	),
 
 	/*
@@ -188,6 +188,7 @@ return array(
 
 		'Sentry'          => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 		'Ardent'		  => 'LaravelBook\Ardent\Ardent',
+	    'Datatables'      => 'Bllim\Datatables\Datatables',
 	),
 
 );

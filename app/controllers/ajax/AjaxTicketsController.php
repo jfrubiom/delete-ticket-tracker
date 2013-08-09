@@ -4,6 +4,23 @@ use Carbon\Carbon;
 
 class AjaxTicketsController extends BaseController
 {
+
+    public function getDataTable()
+    {
+
+        $foo = Ticket::open();       
+        // $foo = array(
+        //     array('foo','bar','bazz','buzz','priority','due','updated'),
+        //     array('2','summary','assignee','creator','p','d','u'),
+        // );
+
+        return Datatables::of($foo)->make();
+
+        // return Response::json($foo);
+        dd(Input::all());
+        // return 'foo';
+    }
+
     /**
      * Find tickets that match a given criteria
      */
@@ -41,15 +58,16 @@ class AjaxTicketsController extends BaseController
 
         $return = array();
         foreach($tickets->get() as $ticket) {
+            $due = Carbon::createFromTimestamp(strtotime($ticket->due));
+
             $data = array();
             $data['id'] = $ticket->id;
             $data['summary'] = $ticket->summary;
             $data['assignee'] = $ticket->assignedTo ? $ticket->assignedTo->first_name : '<unassigned>';
             $data['creator']  = $ticket->createdBy ? $ticket->createdBy->first_name : '';
-            $data['priority'] = $ticket->priority;
-            $data['due'] = $ticket->due == 0 ? '' : 
-                Carbon::createFromTimestamp(strtotime($ticket->due))->toFormattedDateString();
-            $data['updated'] = $ticket->updated_at->toDayDateTimeString();
+            $data['priority'] = $ticket->priorityText;
+            $data['due'] = $ticket->due == 0 ? '' : $due->format('M j');
+            $data['updated'] = $ticket->updated_at->format('n/j/Y g:i A');
             $return[] = $data;
         }
 

@@ -1,8 +1,7 @@
 @extends('frontend/layouts/default')
 
-
-
 @section('content')
+<div class="foo">
     <p>
         @include('frontend/widgets/ticket-type-selector')
         @include('frontend/widgets/department-selector')
@@ -18,6 +17,7 @@
     <p>
         @include('frontend/widgets/ticket-details')
     </p>
+</div>
 
 @stop
 
@@ -30,7 +30,8 @@
         loadAjaxForSelectBox('/ajax/departments',  '#department-selector', 'Departments');
         loadAjaxForSelectBox('/ajax/categories',   '#category-selector', 'Categories');
         setupForReloadTablesWhenChanged('.selector');
-        loadTicketCount()
-        loadTicketList();
+        setupDataTable('#ticket-list-widget table');
+        loadTicketCount();
+        // loadTicketList();
     </script>
 @stop

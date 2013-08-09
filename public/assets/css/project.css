@@ -1,5 +1,16 @@
 /**
  * project-specific css file
+ * 
+ *  Name      Web-Safe  RGB           Hex
+ *  Azure     0099CC    0,137,207     #0089CF
+ *  Ocean     00FFCC    124,204,191   #7CCCBF
+ *  Leaf      66FF00    131,179,65    #83B341
+ *  Hibiscus  FF9900    252,175,23    #FCAF17
+ *  Mango     CC6600    223,109,39    #DF6D27
+ *  Fire      990000    160,30,33     #A01E21
+ *  Orchid    FF0066    237,12,110    #ED0C6E
+ *  Lava      000000    50,35,3       #322303
+ *  White     FFFFFF    255,255,255   #FFFFFF
  */
 
 
@@ -14,7 +25,8 @@
 }
 
 #category-widget {
-    float: right;
+    float: left;
+    margin-right: 20px;
 }
 
 #ticket-count-widget {
@@ -46,7 +58,6 @@
 }
 
 #ticket-list-widget {
-    background: #cccccc;
     margin-top: 10px;
     clear: both;
 }
@@ -59,6 +70,41 @@
 .break {
     clear: both;
 }
+
+table {
+    border: 1px solid #FCAF17;
+    table-layout: fixed;
+}
+
+/*thead > tr, tbody {
+    display: block;
+}*/
+
+th {
+    padding: 6px;
+    text-align: left;
+    background: #FCAF17;
+    border-bottom: 1px solid #FCAF17;
+}
+
+tbody {
+    height: 100px;
+    overflow: auto;
+}
+
+td {
+    padding: 3px 6px;
+}
+
+tr:nth-child(even) {
+    background: #FEEFD1;
+}
+
+tr:hover {
+    background: #DAE8C6;
+}
+
+
 /*
 .clearfix:after {
     content: ".";

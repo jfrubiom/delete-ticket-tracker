@@ -3,8 +3,57 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "1c14b66853199ab4764ed69601c1a2a1",
+    "hash": "8fceff7bb583664660bb7b5ad3b1cad3",
     "packages": [
+        {
+            "name": "bllim/datatables",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bllim/laravel4-datatables-package.git",
+                "reference": "ace00702ffd7674be78157d58086a475a2c212fb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bllim/laravel4-datatables-package/zipball/ace00702ffd7674be78157d58086a475a2c212fb",
+                "reference": "ace00702ffd7674be78157d58086a475a2c212fb",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/filesystem": ">=4.0.0",
+                "illuminate/support": ">=4.0.0",
+                "illuminate/view": ">=4.0.0",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/migrations"
+                ],
+                "psr-0": {
+                    "Bllim\\Datatables": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bilal Gultekin",
+                    "email": "bilal@bilal.im"
+                }
+            ],
+            "description": "Server-side handler of DataTables Jquery Plugin for Laravel 4",
+            "keywords": [
+                "datatable",
+                "datatables",
+                "datatables jquery plugin",
+                "laravel",
+                "laravel4"
+            ],
+            "time": "2013-08-08 20:48:22"
+        },
         {
             "name": "cartalyst/sentry",
             "version": "dev-master",
@@ -720,12 +769,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "dd8d7edc6f39797227f8e341b9b49f27bc387c02"
+                "reference": "e943b3da84ab556f0176eea73387cd14fa07933e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/dd8d7edc6f39797227f8e341b9b49f27bc387c02",
-                "reference": "dd8d7edc6f39797227f8e341b9b49f27bc387c02",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/e943b3da84ab556f0176eea73387cd14fa07933e",
+                "reference": "e943b3da84ab556f0176eea73387cd14fa07933e",
                 "shasum": ""
             },
             "require": {
@@ -822,7 +871,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2013-08-05 13:26:09"
+            "time": "2013-08-08 01:28:52"
         },
         {
             "name": "laravelbook/ardent",
@@ -1377,12 +1426,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Debug.git",
-                "reference": "v2.3.3"
+                "reference": "729f6d19cfc401c4942e43fcc1059103bd6df130"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Debug/zipball/v2.3.3",
-                "reference": "v2.3.3",
+                "url": "https://api.github.com/repos/symfony/Debug/zipball/729f6d19cfc401c4942e43fcc1059103bd6df130",
+                "reference": "729f6d19cfc401c4942e43fcc1059103bd6df130",
                 "shasum": ""
             },
             "require": {
@@ -1424,7 +1473,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "http://symfony.com",
-            "time": "2013-07-01 12:24:43"
+            "time": "2013-08-08 14:16:10"
         },
         {
             "name": "symfony/dom-crawler",
@@ -1755,12 +1804,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Process.git",
-                "reference": "v2.3.3"
+                "reference": "24edc6eb5d4da198f88637ca8b09d2c6257051ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Process/zipball/v2.3.3",
-                "reference": "v2.3.3",
+                "url": "https://api.github.com/repos/symfony/Process/zipball/24edc6eb5d4da198f88637ca8b09d2c6257051ea",
+                "reference": "24edc6eb5d4da198f88637ca8b09d2c6257051ea",
                 "shasum": ""
             },
             "require": {
@@ -1793,7 +1842,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "http://symfony.com",
-            "time": "2013-08-02 21:51:01"
+            "time": "2013-08-08 12:56:07"
         },
         {
             "name": "symfony/routing",
@@ -1912,24 +1961,24 @@
     "packages-dev": [
         {
             "name": "barryvdh/laravel-ide-helper",
-            "version": "v1.5.2",
+            "version": "v1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-ide-helper.git",
-                "reference": "v1.5.2"
+                "reference": "v1.6.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/v1.5.2",
-                "reference": "v1.5.2",
+                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/v1.6.1",
+                "reference": "v1.6.1",
                 "shasum": ""
             },
             "require": {
-                "barryvdh/reflection-docblock": ">=2.0.1",
                 "illuminate/console": "4.x",
                 "illuminate/filesystem": "4.x",
                 "illuminate/support": "4.x",
                 "php": ">=5.3.0",
+                "phpdocumentor/reflection-docblock": "2.0.0",
                 "symfony/class-loader": "~2.3"
             },
             "type": "library",
@@ -1958,50 +2007,66 @@
                 "phpstorm",
                 "sublime"
             ],
-            "time": "2013-07-12 12:39:12"
+            "time": "2013-08-08 17:09:24"
         },
         {
-            "name": "barryvdh/reflection-docblock",
+            "name": "dflydev/markdown",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/barryvdh/ReflectionDocBlock.git",
-                "reference": "2.0.1"
+                "url": "https://github.com/dflydev/dflydev-markdown.git",
+                "reference": "11f8faa2d17f717a038b4d372abd22a6ac4a15dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/ReflectionDocBlock/zipball/2.0.1",
-                "reference": "2.0.1",
+                "url": "https://api.github.com/repos/dflydev/dflydev-markdown/zipball/11f8faa2d17f717a038b4d372abd22a6ac4a15dc",
+                "reference": "11f8faa2d17f717a038b4d372abd22a6ac4a15dc",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "3.7.*@stable"
-            },
-            "suggest": {
-                "dflydev/markdown": "1.0.*"
+                "php": ">=5.3"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
-                    "Barryvdh": [
-                        "src/"
-                    ]
+                    "dflydev\\markdown": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "BSD-3-Clause"
             ],
             "authors": [
                 {
-                    "name": "Mike van Riel",
-                    "email": "mike.vanriel@naenius.com"
+                    "name": "Dragonfly Development Inc.",
+                    "email": "info@dflydev.com",
+                    "homepage": "http://dflydev.com"
+                },
+                {
+                    "name": "Beau Simensen",
+                    "email": "beau@dflydev.com",
+                    "homepage": "http://beausimensen.com"
+                },
+                {
+                    "name": "Michel Fortin",
+                    "homepage": "http://michelf.com"
+                },
+                {
+                    "name": "John Gruber",
+                    "homepage": "http://daringfireball.net"
                 }
             ],
-            "time": "2013-06-08 21:04:47"
+            "description": "PHP Markdown & Extra",
+            "homepage": "http://github.com/dflydev/dflydev-markdown",
+            "keywords": [
+                "markdown"
+            ],
+            "time": "2012-07-15 16:31:27"
         },
         {
             "name": "kalani/facade-root",
@@ -2094,12 +2159,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/padraic/mockery.git",
-                "reference": "dcc8e7bda1b011a7e152b53abc58f2cb7a7cb0c5"
+                "reference": "f0e835aebf28d7323efefffb31b9a6df27427f29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/padraic/mockery/zipball/dcc8e7bda1b011a7e152b53abc58f2cb7a7cb0c5",
-                "reference": "dcc8e7bda1b011a7e152b53abc58f2cb7a7cb0c5",
+                "url": "https://api.github.com/repos/padraic/mockery/zipball/f0e835aebf28d7323efefffb31b9a6df27427f29",
+                "reference": "f0e835aebf28d7323efefffb31b9a6df27427f29",
                 "shasum": ""
             },
             "require": {
@@ -2140,7 +2205,7 @@
                 "test double",
                 "testing"
             ],
-            "time": "2013-08-01 12:39:35"
+            "time": "2013-08-07 21:50:22"
         },
         {
             "name": "mustache/mustache",
@@ -2183,6 +2248,52 @@
                 "templating"
             ],
             "time": "2013-07-18 05:23:52"
+        },
+        {
+            "name": "phpdocumentor/reflection-docblock",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
+                "reference": "2.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/2.0.0",
+                "reference": "2.0.0",
+                "shasum": ""
+            },
+            "require": {
+                "dflydev/markdown": "1.0.*",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*@stable"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "phpDocumentor": [
+                        "src/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike van Riel",
+                    "email": "mike.vanriel@naenius.com"
+                }
+            ],
+            "time": "2013-08-07 11:04:22"
         },
         {
             "name": "symfony/class-loader",
@@ -2240,12 +2351,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/JeffreyWay/Laravel-4-Generators.git",
-                "reference": "a3f04429f40664c847a370e7974fa5577e16444d"
+                "reference": "4151a365349624699d1e178c682e79f469ef3baa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JeffreyWay/Laravel-4-Generators/zipball/a3f04429f40664c847a370e7974fa5577e16444d",
-                "reference": "a3f04429f40664c847a370e7974fa5577e16444d",
+                "url": "https://api.github.com/repos/JeffreyWay/Laravel-4-Generators/zipball/4151a365349624699d1e178c682e79f469ef3baa",
+                "reference": "4151a365349624699d1e178c682e79f469ef3baa",
                 "shasum": ""
             },
             "require": {
@@ -2282,7 +2393,7 @@
                     "role": "Developer"
                 }
             ],
-            "time": "2013-08-05 18:33:31"
+            "time": "2013-08-08 18:00:07"
         },
         {
             "name": "way/laravel-test-helpers",
@@ -2329,6 +2440,7 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
+        "bllim/datatables": 20,
         "laravelbook/ardent": 20,
         "mockery/mockery": 20,
         "kalani/facade-root": 20,

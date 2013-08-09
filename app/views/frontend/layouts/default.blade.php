@@ -20,6 +20,8 @@
 		<!-- CSS
 		================================================== -->
 		<link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+		<link href="{{ asset('assets/css/bootstrap-responsive.min.css') }}" rel="stylesheet">
+		<link href="{{ asset('packages/datatables/css/jquery.dataTables.css') }}" rel="stylesheet">
 		<link href="{{ asset('assets/css/project.css') }}" rel="stylesheet">
 
 		<style>
@@ -35,9 +37,10 @@
 	</head>
 
 	<body>
+		@include('frontend/partials/navbar')
+
 		<!-- Container -->
 		<div class="container">
-			@include('frontend/partials/navbar')
 
 			<!-- Notifications -->
 			@include('frontend/partials/notifications')

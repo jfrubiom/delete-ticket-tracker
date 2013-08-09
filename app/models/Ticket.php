@@ -24,6 +24,23 @@ class Ticket extends Eloquent
 	);
 
 
+// Getters ----------------------------------------------------------------------
+
+	public function getPriorityTextAttribute()
+	{
+		if ($this->priority >= 5)
+			return 'High';
+
+		if($this->priority>=2)
+			return 'Med';
+
+		return 'Low';
+	}
+
+
+
+
+
 // Scopes -----------------------------------------------------------------------
 
 	/**
